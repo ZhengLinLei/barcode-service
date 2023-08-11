@@ -1,0 +1,53 @@
+RewriteEngine on
+
+# STATIC URL 
+RewriteRule ^static/(.*)$ view/resource/$1 [L]
+
+# API
+RewriteRule ^api/(.*)$ view/api/$1 [L]
+
+# BARCODE
+RewriteRule ^barcode/(.*)$ view/barcode/$1 [L]
+
+# WEB
+RewriteRule ^/$ view/web [L]
+
+
+
+
+<FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|svg)$">
+    Header set Cache-Control "public, max-age=2628000"
+    Header unset Last-Modified
+    Header unset ETag
+    FileETag None
+    Header unset Pragma
+</FilesMatch>
+<FilesMatch "\.(otf|woff|ttf)$">
+    Header set Cache-Control "public, max-age=31536000"
+    Header unset Last-Modified
+    Header unset ETag
+    FileETag None
+    Header unset Pragma
+</FilesMatch>
+
+# Deny access from user to server files
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|log|bak|txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+####################
+# GZIP COMPRESSION #
+####################
+
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
