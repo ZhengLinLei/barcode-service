@@ -7,6 +7,23 @@ The project has got three main blocks:
 
 ----------------
 
+## Update your branch
+
+Make sure to update your master branch daily and rebase it to your branch
+```bash
+# Change to master
+git checkout master
+
+# Update it
+git pull origin master
+
+# Go back
+git checkout <branch-name>
+
+# Rebase main to your branch
+git rebase master
+```
+
 ## Public schema
 
 The public is going to be:
