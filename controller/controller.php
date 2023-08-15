@@ -11,4 +11,10 @@ class MVCcontroller {
         return phpversion();
     }
     // ... Add custom methods
+
+    public function getArticuloByBarcode($barcode = null){
+        $barcode = '%'.$barcode.'%';
+        $data = $this->MVCmodel->runQuerySQL("SELECT * FROM articulo WHERE ConsultaParcial LIKE :barcode;", [":barcode" => "$barcode"], true);
+        echo json_encode($data);
+    }
 }

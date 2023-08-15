@@ -4,7 +4,7 @@
 class DBconnection {
     protected $connection = [
         "host" => "localhost:3306", // Host and port
-        "database" => "barcode", // Database name
+        "database" => "barcodedb", // Database name
         "user" => "root", // User
         "password" => "" // Password
     ];
