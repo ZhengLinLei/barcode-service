@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px
+}
+
+body > div {
+    width: 100vw;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+}

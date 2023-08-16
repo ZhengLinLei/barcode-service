@@ -1,7 +1,7 @@
 <?php
-require_once "../../model/model.php";
-require_once "../../controller/controller.php";
-echo "me when";
+require_once "../model/model.php";
+require_once "../controller/controller.php";
+
 $mvc = new MVCcontroller();
 
 if(isset($_GET['barcode'])){
