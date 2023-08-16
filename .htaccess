@@ -10,7 +10,7 @@ RewriteRule ^api/(.*)$ view/api/$1 [L]
 RewriteRule ^barcode/(.*)$ view/barcode/$1 [L]
 
 # WEB
-RewriteRule ^/$ view/web [L]
+# RewriteRule ^/$ view/web [L]
 
 
 
