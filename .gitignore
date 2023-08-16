@@ -2,3 +2,6 @@
 tmp
 test
 *.test
+view/resource/img/web/*.png
+view/resource/img/web/*.jpg
+view/resource/img/web/*.jpeg
