@@ -1,9 +1,7 @@
 <?php
-// Example php file
+// Require Data
+require_once './view/config.php';
 require_once "./model/model.php";
 require_once "./controller/controller.php";
 
-$mvc = new MVCcontroller();
-
-
-include_once "./view/index.php";    // Include index.php
+include_once "./view/web/index.php";    // Include Web
