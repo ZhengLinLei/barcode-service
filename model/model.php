@@ -4,9 +4,9 @@
 class DBconnection {
     protected $connection = [
         "host" => "localhost:3306", // Host and port
-        "database" => "database", // Database name
-        "user" => "root", // User
-        "password" => "root" // Password
+        "database" => $config['database'], // Database name
+        "user" => $config['user'], // User
+        "password" => $config['password'] // Password
     ];
     public function connect(){
         try {
